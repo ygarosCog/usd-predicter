@@ -9,8 +9,6 @@ import org.ygaros.predicter.data.NBPResponse;
 import org.ygaros.predicter.domain.Domain;
 import org.ygaros.predicter.domain.USDCaller;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Marshaller;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -43,9 +41,6 @@ public class StartUp implements CommandLineRunner {
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
-
-        Marshaller marshaller = JAXBContext.newInstance(NBPResponse.class).createMarshaller();
-        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
         PrintWriter writer = new PrintWriter(new FileWriter(file));
         for(LocalDate[] d : dates){

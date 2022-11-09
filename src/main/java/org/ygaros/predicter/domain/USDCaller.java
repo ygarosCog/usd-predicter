@@ -36,6 +36,9 @@ public class USDCaller {
                         .getRates()[0].getMid()
         ).setScale(2, RoundingMode.HALF_UP);
     }
+    public NBPResponse getRateForDate(LocalDate date){
+        return this.callApi(date);
+    }
     public NBPResponse getRatesFor(LocalDate startDate, LocalDate endDate){
         String uriWithDate = String.format(uriFromTo, startDate.toString(), endDate.toString());
         return this.restTemplate.getForObject(uriWithDate, NBPResponse.class);
