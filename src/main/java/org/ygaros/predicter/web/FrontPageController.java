@@ -34,5 +34,4 @@ public class FrontPageController {
     public ResponseEntity<Rate> getRateForDate(@RequestBody LocalDate date){
         return ResponseEntity.ok(this.domain.getRateForDate(date));
     }
-
 }

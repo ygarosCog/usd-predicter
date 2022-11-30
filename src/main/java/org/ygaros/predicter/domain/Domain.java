@@ -10,9 +10,9 @@ import java.time.LocalDate;
 @Service
 public class Domain {
 
-    final private USDCaller caller;
+    private final USDCaller caller;
 
-    final private Predicter predicter;
+    private final Predicter predicter;
 
     @Autowired
     public Domain(USDCaller caller, Predicter predicter) {
